@@ -1,0 +1,65 @@
+{% extends "admin/base.html" %}
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+{% block extrastyle %}
+<style>
+body{
+	background-color: #ff80aa;
+	color: red;
+}
+a.section:link,
+{
+	color:#e41313;
+}
+
+.module h2, .module caption, .inline-group h2 {
+   
+    background: #c879b3;
+    color: #fff;
+}
+
+div.breadcrumbs {
+    background: #2d1512;
+    padding: 10px 40px;
+    border: none;
+    font-size: 18px;
+    color: #63a21e;
+    text-align: left;
+}
+
+a:link, #branding h1 a:visited {
+    color: black;
+}
+#header {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background: #417690;
+    color: #f5dd5d;
+    overflow: hidden;
+}
+.module caption, .inline-group h2 {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+label.required {
+    font-weight: bold;
+    color: #333;
+}
+label {
+    font-weight: normal;
+    color: #666;
+    font-size: 20px;
+}
+</style>
+{% endblock %}
+
+{% block branding %}
+
+<h1 id="POLLSAPP"><a href="{% url 'admin:index' %}">MY POLLS APP</a></h1>
+
+{% endblock %}

@@ -1,11 +1,34 @@
 li a {
-    color: green;
+    
+    font-size: 20px;
+    
+    text-align: right;
+    border-top: 10px;
+    border-left: 10px;
+    display: inline-block;
+    position:absolute;
+    
 }
 
+
+h3{
+   text-align: left;
+   font-size: 25px;
+   font-color:black;
+
+ }
 body {
-    background: white url("images/background.png") no-repeat;opacity: 6.5;
-    /*background-color: purple;*/
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    
+    background: white url("images/icon.jpg") repeat;
 }
+    
+
+
+
+
 
 
 
