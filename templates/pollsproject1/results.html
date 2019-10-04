@@ -11,19 +11,34 @@
   <meta name="author" content="SitePoint">
   <link rel="stylesheet" type="text/css" href="{% static 'pollsproject1/style.css' %}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<style >
+  body{
+  	background-color:   black;
+  }
 
+
+
+</style>
 </head>
-
+<h2 style="color:orange; text-align:center;  border: 5px solid pink;">CHECK VOTE RESULTS</h2>
 <body>
-	<h1>{{ question.question_text }}</h1>
+	<h1 style="color:skyblue; text-align:center;  border: 5px solid grey;">{{ question.question_text }}</h1>
 
-<ul>
+<ul style= "font-size: 20px; color:purple;  text-align: center; list-style: inside; display:inline-block; border:5px solid black;position: relative;
+  z-index: 1;
+  background: pink;
+  max-width: 360px;
+  margin:  auto 600px;
+  padding: 45px;
+  text-align: left; bottom:-40px;">
 {% for choice in question.choice_set.all %}
     <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
 {% endfor %}
 </ul>
 
-<a href="{% url 'pollsproject1:detail' question.id %}">Vote again?</a>
+<a href="{% url 'pollsproject1:detail' question.id %}"><button style = " display: block;
+    position: absolute;
+    left: 690px; bottom :100px">Vote again?</button></a>
 </body>
 </html>
 

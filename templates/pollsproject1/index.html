@@ -6,13 +6,25 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'pollsproject1/style.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<style>
+body{
+	background-color:  #9a5757;
+}
+
+
+</style>
 </head>
 <body>
 
-<h3>CHOOSE QUESTION  AND VOTE</h3>
+<h3 style="color:orange; text-align:center;  border: 5px solid grey;">CHOOSE QUESTION  AND VOTE</h3>
 
 {% if latest_question_list %}
-    <ul>
+    <ul style= "font-size: 20px; color:purple;  text-align: center; list-style: inside; border:5px solid black;position: relative;
+  z-index: 1;
+  background: lightpink;
+  
+  padding: 45px;
+  ">
     {% for question in latest_question_list %}
        <li><a href="{% url 'pollsproject1:detail' question.id %}">{{ question.question_text }}</a></li>
 
