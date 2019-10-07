@@ -9,36 +9,51 @@
   <title>The HTML5 Herald</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
-  <link rel="stylesheet" type="text/css" href="{% static 'pollsproject1/style.css' %}">
+ 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<style >
-  body{
-  	background-color:   black;
-  }
-
-
-
-</style>
+  <style type="text/css">
+    .main,h2,a{
+      margin-left:400px;
+      padding: 0px 10px;
+    }   
+    body{
+      background-color: white;
+    }
+  </style>
 </head>
-<h2 style="color:orange; text-align:center;  border: 5px solid pink;">CHECK VOTE RESULTS</h2>
+
 <body>
-	<h1 style="color:skyblue; text-align:center;  border: 5px solid grey;">{{ question.question_text }}</h1>
+  <div class="jumbotron" >
+<div class="well" color:grey;>
+<h3> Polls App</h3>
+</div>
+<h2>CHECK VOTE RESULTS</h2>
 
-<ul style= "font-size: 20px; color:purple;  text-align: center; list-style: inside; display:inline-block; border:5px solid black;position: relative;
-  z-index: 1;
-  background: pink;
-  max-width: 360px;
-  margin:  auto 600px;
-  padding: 45px;
-  text-align: left; bottom:-40px;">
-{% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
-</ul>
+  </div>
+<div id="content" name="content" class="main">
+    <div class="row justify-content-center">
+      <div class="col-8">
+             
 
-<a href="{% url 'pollsproject1:detail' question.id %}"><button style = " display: block;
-    position: absolute;
-    left: 690px; bottom :100px">Vote again?</button></a>
+        <div class="btn btn-primary ">     
+	      <h1>{{ question.question_text }}</h1>
+        </div>
+        <br>
+        <br>
+        
+        <ul class="list-group list-group-flush">   
+        {% for choice in question.choice_set.all %}
+        <li class="list-group-item list-group-item-warning">{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+        {% endfor %}
+        </ul>
+        
+
+</div>
+    </div>
+      </div>
+
+
+<a href="{% url 'pollsproject1:detail' question.id %}"><button class="btn btn-primary">Vote again?</button></a>
 </body>
 </html>
 
